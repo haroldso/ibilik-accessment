@@ -1,0 +1,15 @@
+<h1> Start Renting out your house</h1>
+
+<form action="/new" method="post">
+	<label>name: </label>
+	<input type="text" name="property[name]"><br>
+	<label>address: </label>
+	<input type="text" name="property[address]"><br>
+	<label>rental price: </label>
+	<input type="text" name="property[rental_price]"><br>
+	<label>description: </label>
+	<input textarea="text" name="property[description]" placeholder="condition? year?">
+	<input type="submit" value="create!">
+</form>
+
+<%= @message %>

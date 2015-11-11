@@ -1,0 +1,28 @@
+<h1>Welcome to I-Bilik </h1>
+
+<p> All The your house below </p>
+
+
+<p><% a = @property2.where(user_id: current_user.id.to_s) %>
+	<%  a.each_with_index do |t, index| %>
+	<a href="/properties/<%= t.id%>"><%= "#{index + 1}. #{t.name}" %></a></p>
+	<% end %> 
+
+<p> All the properties available for you</p>
+
+<%  @property2.each_with_index do |p, aindex| %>
+	<a href="/properties/<%= p.id%>"><%= "#{aindex + 1}. #{p.name}" %></a></p>
+	<% end %> 
+
+ 
+
+<form action="/new" method="get">
+	<input type="submit" value="create new!">
+</form>
+
+<form action="/logout" method="post">
+	<input type="submit" value="logout!">
+</form>
+
+<%= @message %>
+

@@ -1,0 +1,13 @@
+<h1>Please Log in</h1>
+<br>
+<p> <% @message %> </p>
+
+<% if session[:user_id].nil? %>
+<form action="/login" method="post">
+	<input type="text" name="email" placeholder="email">
+	<input type="password" name="password" placeholder="password">
+	<input type="submit" value="Log In!">
+</form>
+<% else %>
+<% redirect to "/home" %>
+<% end %>

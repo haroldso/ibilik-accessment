@@ -1,0 +1,14 @@
+<h2>Name: <%= @property.name %></h2>
+<h2>Address: <%= @property.address %></h2>
+<h2>Price(RM): <%= @property.rental_price %></h2>
+<h2>Description:<%= @property.description %></h2>
+
+<form action="/properties/<%= @property.id %>" method="post">
+	<input type="hidden" name="_method" value="put">
+	<label>Name: </label>
+	<input type="text" name="property[name]" value="<%= @property.name %>">
+	<input type="text" name="property[address]" value="<%= @property.address %>">
+	<input type="text" name="property[rental_price]" value="<%= @property.rental_price %>">
+	<input type="text" name="property[description]" value="<%= @property.description %>">
+	<input type="submit" value="EDIT!">
+</form>

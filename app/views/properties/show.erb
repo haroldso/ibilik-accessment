@@ -1,0 +1,28 @@
+<h2>Name: <%= @property.name %></h2>
+<h2>Address: <%= @property.address %></h2>
+<h2>Price(RM): <%= @property.rental_price %></h2>
+<h2>Description:<%= @property.description %></h2>
+<h2>Posted by:<%= User.find(@property.user_id).username %></h2>
+<h2>Contact:<%= @property.contact %></h2>
+
+
+<% if session[:user_id] == @property.user_id %>
+<form action="/properties/<%= @property.id %>/edit" method="get">
+	<input type="submit" value="edit">
+</form>
+
+<form action="/properties/<%= @property.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="delete!">
+</form>
+
+<% else %>
+<form action="/home" method="get">
+	<input type="submit" value="home">
+</form>
+
+<form action="/booking/<%= @property.id %>" method="get" >
+	<input type="submit" value="booking">
+</form>
+
+<% end %>
